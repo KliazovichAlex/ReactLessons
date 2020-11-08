@@ -11,7 +11,7 @@ class Text extends Component {
   render() {
     return this.state.isSignedIn === false ? (
       <div className="user">
-        <button onClick={() => this.click()}>LogIn</button>
+        <button onClick={setTimeout(this.click, 3000)}>LogIn</button>
       </div>
     ) : (
       <div className="user">
