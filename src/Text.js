@@ -1,17 +1,23 @@
 import React, { Component } from "react";
-import data from "./data.json";
 import "./index.css";
 
 class Text extends Component {
+  state = {
+    isSignedIn: false,
+  };
+  click = () => {
+    this.setState({ isSignedIn: true });
+  };
   render() {
-    return data.map((element) => {
-      return (
-        <div className="user">
-          <h1>{element.name.first}</h1>
-          <h2>{element.name.last}</h2>
-        </div>
-      );
-    });
+    return this.state.isSignedIn === false ? (
+      <div className="user">
+        <button onClick={() => this.click()}>LogIn</button>
+      </div>
+    ) : (
+      <div className="user">
+        <h1>Welcome bro!</h1>
+      </div>
+    );
   }
 }
 
