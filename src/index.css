@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
-.text-style {
-  font-style: italic;
+.user {
+  width: 250px;
+  height: 150px;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0 auto;
 }
