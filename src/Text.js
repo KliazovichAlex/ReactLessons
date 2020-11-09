@@ -3,22 +3,23 @@ import "./index.css";
 
 class Text extends Component {
   state = {
-    isSignedIn: false,
+    value: "",
   };
-  click = () => {
-    this.setState({ isSignedIn: true });
-  };
+
   render() {
-    return this.state.isSignedIn === false ? (
-      <div className="user">
-        <button onClick={() => setTimeout(this.click, 3000)}>LogIn</button>
-      </div>
-    ) : (
-      <div className="user">
-        <h1>Welcome bro!</h1>
+    return (
+      <div>
+        <input
+          type="text"
+          onChange={(event) => {
+            this.setState({
+              value: "" + event.nativeEvent.target.value,
+            });
+          }}
+          value={this.state.value}
+        />
       </div>
     );
   }
 }
-
 export default Text;
